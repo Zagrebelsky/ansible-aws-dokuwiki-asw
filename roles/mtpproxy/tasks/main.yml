@@ -1,0 +1,21 @@
+---
+- name: Pull an image of MTPproxy for telegram
+  docker_image:
+    name: telegrammessenger/proxy
+- name: Create MTPproxy conf dir
+  file:
+    path: "{{ data_dir }}"
+    state: directory
+- name: Run docker MTPproxy of telegram
+  docker_container:
+    name: mtproto-proxy
+    image: telegrammessenger/proxy
+    ports:
+      - "{{ port }}:443"
+    restart: yes
+    restart_policy: always
+    env:
+      SECRET: "{{ secret }}"
+    volumes:
+    - proxy-config:{{ data_dir }}
+    ulimits: nofile:98304:98304

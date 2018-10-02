@@ -2,11 +2,13 @@
 - name: Pull an image of MTPproxy for telegram
   docker_image:
     name: telegrammessenger/proxy
+
 - name: Create MTPproxy conf dir
   file:
     path: "{{ data_dir }}"
     state: directory
-- name: Run docker MTPproxy of telegram
+
+- name: Run docker MTPproxy for telegram
   docker_container:
     name: mtproto-proxy
     image: telegrammessenger/proxy

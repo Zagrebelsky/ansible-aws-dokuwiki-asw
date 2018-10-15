@@ -1,0 +1,18 @@
+---
+docker_dir: "/var/docker"
+# nginx
+nginx_image: "nginx"
+nginx_name: "dokuwiki_nginx_proxy"
+nginx_port: 80
+nginx_conf_dir: "{{ docker_dir }}/dokuwiki_nginx_proxy"
+wiki_url: "abdus.org"
+# dokuwiki
+dokuwiki_image: "mprasil/dokuwiki"
+dokuwiki_port: 8080
+dokuwiki_name: "abdus-wiki"
+dokuwiki_dir: "{{ docker_dir }}/dokuwiki"
+dokuwiki_data_dir: "{{ dokuwiki_dir }}/data"
+dokuwiki_conf_dir: "{{ dokuwiki_dir }}/conf"
+dokuwiki_plugins_dir: "{{ dokuwiki_dir }}/lib/plugins"
+dokuwiki_tpl_dir: "{{ dokuwiki_dir }}/lib/tpl"
+dokuwiki_log_dir: "/var/log/dokuwiki"

@@ -2,7 +2,7 @@
 - hosts: EC2
   become: yes
   roles:
-#    - server_preparation
-#    - docker_install
-#    - mtpproxy
+    - server_preparation
+    - docker_install
+    - mtpproxy
     - dokuwiki

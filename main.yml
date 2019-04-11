@@ -4,5 +4,12 @@
   roles:
     - server_preparation
     - docker_install
-    - mtpproxy
-    - dokuwiki
+    - role: mtpproxy
+      vars:
+        secret: telegram_secret
+        data_dir: "/var/docker/MTPproxy/data"
+        telegram_port: 4443
+    - role: dokuwiki
+      vars:
+        wiki_host: my_wiki.com
+        docker_dir: /var/docker

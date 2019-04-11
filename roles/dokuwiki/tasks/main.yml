@@ -25,14 +25,14 @@
     name: "{{ dokuwiki_name }}"
     image: "{{ dokuwiki_image }}"
     networks: 
-    - name: "{{ dokuwiki_network }}"
+      - name: "{{ dokuwiki_network }}"
     restart: yes
     restart_policy: always
     volumes:
-    - "{{ dokuwiki_data_dir }}:/dokuwiki/data"
-    - "{{ dokuwiki_conf_dir }}:/dokuwiki/conf"
-    - "{{ dokuwiki_plugins_dir }}:/dokuwiki/lib/plugins"
-    - "{{ dokuwiki_tpl_dir }}:/dokuwiki/lib/tpl"
+      - "{{ dokuwiki_data_dir }}:/dokuwiki/data"
+      - "{{ dokuwiki_conf_dir }}:/dokuwiki/conf"
+      - "{{ dokuwiki_plugins_dir }}:/dokuwiki/lib/plugins"
+      - "{{ dokuwiki_tpl_dir }}:/dokuwiki/lib/tpl"
 
 # install nginx
 - name: Pull an image of nginx
@@ -57,4 +57,4 @@
     restart: yes
     restart_policy: always
     volumes:
-    - "{{ nginx_conf_dir }}/{{ wiki_url }}.conf:/etc/nginx/conf.d/{{ wiki_url }}.conf"
+      - "{{ nginx_conf_dir }}/{{ wiki_url }}.conf:/etc/nginx/conf.d/{{ wiki_url }}.conf"

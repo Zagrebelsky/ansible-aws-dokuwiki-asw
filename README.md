@@ -2,6 +2,7 @@
 Ansible role create AWS Linux 2 instace and deploy dockuwiki and Telegram proxy
 
 Vars:
+
 |Var name|Default|Description|
 ---------|-------|-----------
 |secret|telegram_secret|Telegram proxy secret|

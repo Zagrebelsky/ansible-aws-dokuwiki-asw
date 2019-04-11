@@ -1,3 +1,3 @@
-secret: tegram_pass
+secret: telegram_pass
 data_dir: "/var/docker/MTPproxy/data"
 telegram_port: 4443
